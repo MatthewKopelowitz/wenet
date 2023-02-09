@@ -52,13 +52,32 @@ And please see [doc](runtime/binding/python/README.md) for usage.
 
 ## Installation(Training and Developing)
 
+- First make sure you have the latest verion of Python installed: https://www.python.org/downloads/windows/
+- Create a new folder on your computer for where you want a copy of the project to live
+- We recommend using Visual Studio Code to setup the project
+- VSCode will allow you to open a file explorer, terminal, and edit files/code all in one place
 - Clone the repo
+- This can be done either by using the command below with a terminal in the specified folder,
+or by using the GitHub Desktop app to automatically clone the repo in your specified folder
 ``` sh
 git clone https://github.com/wenet-e2e/wenet.git
 ```
 
 - Install Conda: please see https://docs.conda.io/en/latest/miniconda.html
+- On Conda's website using the link above, download the latest miniconda installer
+for your operating system platform
+- When running the miniconda installer, make sure to select
+``` sh
+Add Miniconda3 to my PATH environment variable
+```
+otherwise you will not be able to use the 
+``` sh
+conda
+```
+command in a terminal on your computer.
+- Conda is a package manager that is used to support python for this project
 - Create Conda env:
+Make sure you open a terminal in the specified folder and then run the following commands
 
 ``` sh
 conda create -n wenet python=3.8
@@ -66,7 +85,7 @@ conda activate wenet
 pip install -r requirements.txt
 conda install pytorch=1.10.0 torchvision torchaudio=0.10.0 cudatoolkit=11.1 -c pytorch -c conda-forge
 ```
-
+- The last line may take a while, this is normal, just wait for the process to finish
 - Optionally, if you want to use x86 runtime or language model(LM),
 you have to build the runtime as follows. Otherwise, you can just ignore this step.
 
@@ -75,6 +94,13 @@ you have to build the runtime as follows. Otherwise, you can just ignore this st
 cd runtime/libtorch
 mkdir build && cd build && cmake -DGRAPH_TOOLS=ON .. && cmake --build .
 ```
+- From here you can explore the rest of the project
+- Feel free to work on different files in the different folders
+- If you add anything, create a pull request with a detailed description of what you changed,
+and we will review it and get back to you if we implement it
+- Also, be sure to check out the examples folder which includes some samples of what other
+contributers have been up to recently
+- This can be a great way for you to discover ways to contribute to the project
 
 ## Discussion & Communication
 
